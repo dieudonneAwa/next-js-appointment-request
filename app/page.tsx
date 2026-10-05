@@ -1,0 +1,5 @@
+import config from '../src/core/config.js';
+import {service} from '../src/core/service.js';
+import SubmissionForm from './form';
+export const dynamic='force-dynamic';
+export default function Page(){const model=service().publicView() as {count:number;remaining?:number;rows:{title:string;description:string}[]};return <><section className="hero"><div><div className="eyebrow">{config.eyebrow}</div><h1>{config.headline}</h1><p className="intro">{config.description}</p><div className="details">{config.details.map(([key,value])=><div className="detail" key={key}><small>{key}</small><strong>{value}</strong></div>)}</div>{model.remaining!==undefined?<p className="count">{model.remaining} of {config.capacity} seats available</p>:config.kind==='rsvp'?<p className="count">{model.count} people on the list</p>:null}</div><SubmissionForm fields={config.fields} button={config.button} note={config.formNote}/></section>{model.rows.length>0 && <section className="listing"><h2>In this collection</h2>{model.rows.map((row,index)=><article className="list-item" key={index}><h3>{row.title}</h3><p>{row.description}</p></article>)}</section>}</>}

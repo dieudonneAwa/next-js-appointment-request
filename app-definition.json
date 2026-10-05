@@ -1,0 +1,53 @@
+{
+  "id": 2,
+  "title": "Appointment Request",
+  "framework": "Next.js",
+  "transport": "api",
+  "details": [],
+  "projects": [],
+  "actions": [
+    [
+      "accept",
+      "Confirm"
+    ],
+    [
+      "decline",
+      "Decline"
+    ]
+  ],
+  "capacity": 0,
+  "adminOnly": false,
+  "hideForm": false,
+  "publicList": false,
+  "formNote": "Your details are used only to handle this request.",
+  "kind": "appointment",
+  "eyebrow": "OFFICE HOURS",
+  "headline": "Make time for a good conversation.",
+  "description": "Request a 30-minute appointment. The organizer will confirm or decline your proposed time.",
+  "button": "Request an appointment",
+  "fields": [
+    {
+      "name": "name",
+      "label": "Your name",
+      "type": "text"
+    },
+    {
+      "name": "email",
+      "label": "Email address",
+      "type": "email"
+    },
+    {
+      "name": "time",
+      "label": "Proposed date and time (UTC)",
+      "type": "datetime-local"
+    },
+    {
+      "name": "topic",
+      "label": "What would you like to discuss?",
+      "type": "textarea"
+    }
+  ],
+  "success": "Your request is saved. You will receive an email after it is reviewed.",
+  "accent": "#6654a1",
+  "batch": false
+}
